@@ -13,12 +13,15 @@ public class Spicejet {
 	public static void main(String[] args) {
 	ChromeDriver driver= new ChromeDriver();
 	driver.get("https://www.spicejet.com/");
-	//driver.navigate().refresh();
-	driver.manage().window().maximize();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	WebElement login=driver.findElement(By.xpath("(//div[.='Login'])[1]"));
-	login.click();
-	click();
+	driver.findElement(By.xpath("(//input[@class='css-1cwyjr8 r-homxoj r-ubezar r-10paoce r-13qz1uu'])[1]")).sendKeys("Delhi");
+	driver.findElement(By.xpath("(//input[@class='css-1cwyjr8 r-homxoj r-ubezar r-10paoce r-13qz1uu'])[2]")).sendKeys(Keys.BACK_SPACE);
+	driver.findElement(By.xpath("(//input[@class='css-1cwyjr8 r-homxoj r-ubezar r-10paoce r-13qz1uu'])[2]")).sendKeys(Keys.BACK_SPACE);
+	driver.findElement(By.xpath("(//input[@class='css-1cwyjr8 r-homxoj r-ubezar r-10paoce r-13qz1uu'])[2]")).sendKeys("Mumbai");
+	driver.findElement(By.xpath("(//div[@class='css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep'])[3]"));
+	driver.findElement(By.xpath("(//div[@class='css-1dbjc4n r-6koalj r-18u37iz r-d0pm55'])[4]/div[5]")).click();
+	Thread.sleep(3000);
+	driver.findElement(By.xpath("(//div[@class='css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep'])[4]/div[1]")).click();
+	driver.findElement(By.xpath("(//div[@class='css-1dbjc4n r-6koalj r-18u37iz r-d0pm55'])[6]/div[6]")).click();
     
 	
 	}
